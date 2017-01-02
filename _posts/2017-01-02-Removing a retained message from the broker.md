@@ -13,6 +13,6 @@ excerpt: "Removing a retained message from the MQTT broker"
 message to the topic you wish to clear. For example, you could do it
 with mosquitto_pub as follows:</p>
 
-<code>mosquitto_pub -h [host] -t [topic] -r -n</code>
+<p><code>mosquitto_pub -h [host] -t [topic] -r -n</code></p>
 
 <p>Cheers,</p>
