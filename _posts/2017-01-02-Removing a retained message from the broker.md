@@ -1,3 +1,12 @@
+---
+published: true
+layout: post
+author: me
+title: "Removing a retained message from the broker"
+tagline:
+excerpt: "Removing a retained message from the MQTT broker"
+---
+
 ##Removing a retained message from the broker
 
 <p>We can remove retained messages by publishing a zero length retained
