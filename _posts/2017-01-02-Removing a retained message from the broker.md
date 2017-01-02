@@ -15,4 +15,4 @@ with mosquitto_pub as follows:
 
 <code>mosquitto_pub -h <host> -t <topic> -r -n
 
-Cheers,
+<p>Cheers,</p>
