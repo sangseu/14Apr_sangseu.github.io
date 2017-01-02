@@ -8,7 +8,7 @@ excerpt: "Trong vài năm qua, sự bùng nổ công nghệ đã được dự b
 nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh"
 ---
 <p>
-<code>Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT
+Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT
 ================================================
  
 Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết 
@@ -22,5 +22,5 @@ Các từ khóa: Internet of Things, M2M Communications (truyền thông M2M), I
 (mạng không dây), Testbed, Gateway Engineering (kĩ thuật Gateway), Android programming (lập trình Android), Electric Power Grid 
 (mạng lưới điện), Smart Grid (mạng lưới thông minh).
 
-Một số thuật ngữ viêt tắt:</code>
+Một số thuật ngữ viêt tắt:
 </p>
