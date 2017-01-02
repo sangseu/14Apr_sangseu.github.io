@@ -7,9 +7,8 @@ tagline:
 excerpt: "Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết 
 nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh"
 ---
-
-<code>
-Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT
+<p>
+<code>Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT
 ================================================
  
 Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết 
@@ -24,3 +23,4 @@ Các từ khóa: Internet of Things, M2M Communications (truyền thông M2M), I
 (mạng lưới điện), Smart Grid (mạng lưới thông minh).
 
 Một số thuật ngữ viêt tắt:</code>
+</p>
