@@ -24,12 +24,12 @@ Các từ khóa: Internet of Things, M2M Communications (truyền thông M2M), I
 
 Một số thuật ngữ viêt tắt:
 ---
-Viết tắt|Giải nghĩa
-3G|Dịch vụ truyền thông di động thế hệ 3
-6LoWLAN|IPv6 low Wirless Personal Area Network
-AES:Advanced|Encryption Standard
-µC:Micro|Controller
-sub-GHz|Băng tần dưới 1GHz
+Viết tắt | Giải nghĩa
+3G | Dịch vụ truyền thông di động thế hệ 3
+6LoWLAN | IPv6 low Wirless Personal Area Network
+AES:Advanced | Encryption Standard
+µC:Micro | Controller
+sub-GHz | Băng tần dưới 1GHz
 ---
 
 Chương 1
@@ -79,7 +79,7 @@ Mặc dù khái niệm IoT đã được nghiên cứu trong hơn một thâp k�
 nay không có kiến trúc làm tiêu chuẩn và vụ thể cho các IoT. Mặc dù có sự thiếu thống nhất chung, có một kiến trúc 3 tầng nổi tiếng đ
 được chấp nhận trong đó bao gồm các lớp Perception-Nhận thức, lớp Network-Mạng, lớp Application-Ứng dụng.
 
-<code>
+```
 +---------------+
 |  Lớp ứng dụng |
 +---------------+
@@ -87,7 +87,7 @@ nay không có kiến trúc làm tiêu chuẩn và vụ thể cho các IoT. Mặ
 +---------------+
 | Lớp nhận thức |
 +---------------+
-</code>
+```
 
 2.1.1 Lớp nhận thức
 -------------------
@@ -167,14 +167,15 @@ cấu chấp hành, vi điều khiển và một bộ truyền tin radio đượ
 
 4. Radio Transceiver, bộ thhu phát radio để truyền-nhận dữ liệu. Có rất nhiều lựa chọn thay thế cho các bộ thu-phát RF và giao thức 
 truyền thông phù hợp, và một số giải pháp thay thế phù hợp nhất được tóm tắt trong phần trình bày tiếp theo.
+```
 
                   Sensors
                  +------+
-		               |      |
+		 |      |
 Power supply     |  µC  |.o)RF Transceiver
-	              	 +------+
+	         +------+
                  Actuators
-
+```
 2.2.2 Các giao thưc truyền thông cho IoT
 ----------------------------------------
 Các thiết bị đầu cuối có thể được trang bị khả năng kết nối Internet, hoạt động ở công suất thấp và khả năng giao tiếp hạn chế. 
