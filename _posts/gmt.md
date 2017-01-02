@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<body>
+---
+published: true
+layout: post
+author: me
+title: "Testing"
+tagline: test
+excerpt: "excerpt"
+---
 
-<p id="today"></p>
-
-<script>
-document.getElementById("today").innerHTML = Date();
-</script>
-
-</body>
-</html>
+;)
