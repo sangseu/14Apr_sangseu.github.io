@@ -7,7 +7,7 @@ tagline:
 excerpt: "Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết 
 nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh"
 ---
-```
+
 Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT
 ================================================
  
@@ -363,4 +363,4 @@ thích hợp cho các thiết bị cuối vì sử dụng ít băng thông và t
 
 
 [Còn tiếp…]
-```
+
