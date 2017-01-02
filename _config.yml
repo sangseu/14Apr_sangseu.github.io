@@ -3,6 +3,6 @@ permalink:   /articles/:title/
 highlighter: rouge
 markdown:    kramdown
 
-title: CFPB Open Tech
-url: "https://cfpb.github.io/"
+title: sangseu.github.io
+url: "https://sangseu.github.io/"
 description: "Learn about the technology work the Consumer Financial Protection Bureau undertakes to support its mission."
