@@ -4,62 +4,45 @@ layout: post
 author: me
 title: "Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT"
 tagline:
-excerpt: "Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết 
-nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh"
+excerpt: "Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh"
 ---
 
 Tìm hiểu tự xây dựng thử nghiệm một hệ thống IoT
 ================================================
- 
-Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết 
-nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh. Các lĩnh vực này có khả năng thúc đẩy sự phát triển của thông tin và 
-công nghệ truyền thông (ICT) trong môi trường đô thị và cung cấp các dịch vụ có khả năng cải thiện sức khỏe mỗi cá nhân và toàn
-xã hội. Các khái niêm Internet of Things (IoT) sẽ được xem xét trong bài viết này, các kiến trúc sẽ được thảo luận và trình bày một 
-số giải pháp thương mại đáng chú ý. Sau đó sẽ nghiên cứu xây dựng nền tảng của chúng ta bằng cách thiết lập mạng không dây các thiết 
-bị sub-GHz và kết nối chúng đến môi trường Internet Cloud ảo. Ngoài ra, các ứng dụng phần mềm cũng được thiết kế để hoàn thành mạng 
-lưới End-to-End Machine to Machine (M2M) và bắt đầu cuộc đua Internet of Things.
-Các từ khóa: Internet of Things, M2M Communications (truyền thông M2M), IoT Cloud Platforms (nền tảng đám mây IoT), Wireless Network 
-(mạng không dây), Testbed, Gateway Engineering (kĩ thuật Gateway), Android programming (lập trình Android), Electric Power Grid 
-(mạng lưới điện), Smart Grid (mạng lưới thông minh).
+
+Trong vài năm qua, sự bùng nổ công nghệ đã được dự báo trong lĩnh vực công nghệ và mạng máy tính, đáp ứng đầy đủ điều kiện để kết nối các lĩnh vực hướng tới xây dựng các hệ thống thông minh. Các lĩnh vực này có khả năng thúc đẩy sự phát triển của thông tin và công nghệ truyền thông (ICT) trong môi trường đô thị và cung cấp các dịch vụ có khả năng cải thiện sức khỏe mỗi cá nhân và toàn xã hội. Các khái niêm Internet of Things (IoT) sẽ được xem xét trong bài viết này, các kiến trúc sẽ được thảo luận và trình bày một số giải pháp thương mại đáng chú ý. Sau đó sẽ nghiên cứu xây dựng nền tảng của chúng ta bằng cách thiết lập mạng không dây các thiết bị sub-GHz và kết nối chúng đến môi trường Internet Cloud ảo. Ngoài ra, các ứng dụng phần mềm cũng được thiết kế để hoàn thành mạng lưới End-to-End Machine to Machine (M2M) và bắt đầu cuộc đua Internet of Things.
+Các từ khóa: Internet of Things, M2M Communications (truyền thông M2M), IoT Cloud Platforms (nền tảng đám mây IoT), Wireless Network(mạng không dây), Testbed, Gateway Engineering (kĩ thuật Gateway), Android programming (lập trình Android), Electric Power Grid(mạng lưới điện), Smart Grid (mạng lưới thông minh).
 
 Một số thuật ngữ viêt tắt:
 ---
 Viết tắt | Giải nghĩa
+---|---
 3G | Dịch vụ truyền thông di động thế hệ 3
 6LoWLAN | IPv6 low Wirless Personal Area Network
 AES:Advanced | Encryption Standard
 µC:Micro | Controller
 sub-GHz | Băng tần dưới 1GHz
----
 
 Chương 1
 ========
 Giới thiệu
 ----------
-Khái niệm đầu tiên về Internet of Things, còn gọi là IoT, lần đầu tiên được Kevin Ashton đưa vào bài thuyết trình năm 1999 để mô tả 
-một kiến trúc thông minh trên nền Internet. Ngày nay, thuật ngữ này được sử dụng rộng rãi hơn bao giờ hết, nhưng để đưa ra những 
-định nghĩa chính xác không phải là một điều đơn giản. IoT là sự liên kết với nhau và kết nối Internet của tất cả mọi thứ xung quanh 
-húng ta bao gồm khoa học của truyền thông và điện tử. Mọi thứ có thể thay đổi trong các lĩnh vực này, IoT ngày càng phát triển mạnh 
-mẽ vì thế các định của nó cũng phải đủ linh hoạt để bắt kịp.
+Khái niệm đầu tiên về Internet of Things, còn gọi là IoT, lần đầu tiên được Kevin Ashton đưa vào bài thuyết trình năm 1999 để mô tả một kiến trúc thông minh trên nền Internet. Ngày nay, thuật ngữ này được sử dụng rộng rãi hơn bao giờ hết, nhưng để đưa ra những định nghĩa chính xác không phải là một điều đơn giản. IoT là sự liên kết với nhau và kết nối Internet của tất cả mọi thứ xung quanh chúng ta bao gồm khoa học của truyền thông và điện tử. Mọi thứ có thể thay đổi trong các lĩnh vực này, IoT ngày càng phát triển mạnh mẽ vì thế các định của nó cũng phải đủ linh hoạt để bắt kịp.
 Mục tiêu bài viết này là triển khai thử nghiệm IoT gồm các yếu tố sau:
 
-- Một mạng M2M không dây để kết nối các cảm biến và cơ cấu chấp hành. Đặc biêt, sub-GHz được lựa chọn vì nó phù hợp cho IoT, nó sẽ 
-được thảo luận sau.
+- Một mạng M2M không dây để kết nối các cảm biến và cơ cấu chấp hành. Đặc biêt, sub-GHz được lựa chọn vì nó phù hợp cho IoT, nó sẽ được thảo luận sau.
 
 - Một Gateway cung cấp mạng M2M không dây với khả năng kết nối tới mang Internet.
 
-- Một niền tảng điện toán đám mây để lưu trữ dữ liệu thu thập từ thế giới thực và đúng định dạng được sử dụng bởi các end-user tạo 
-điều kiện thuận lợi cho các ứng dụng thông minh.
+- Một niền tảng điện toán đám mây để lưu trữ dữ liệu thu thập từ thế giới thực và đúng định dạng được sử dụng bởi các end-user tạo điều kiện thuận lợi cho các ứng dụng thông minh.
 
-- Một ứng dụng trên điện thoại thông minh hoặc máy tính cung cấp khả năng truy cập vào Cloud lấy thông tin đã thu thập được và tương
-tác với các cảm biến, cơ cấu chấp hành.
+- Một ứng dụng trên điện thoại thông minh hoặc máy tính cung cấp khả năng truy cập vào Cloud lấy thông tin đã thu thập được và tương tác với các cảm biến, cơ cấu chấp hành.
 
 Tổng quan nội dung
 ==================
 Phần tiếp theo được tổ chức trong các chương sau:
 
-Chương 2: Thông tin chung về IoT, mô hình 3 lớp để hiểu về các khái niệm và mô tả chi tiết các thành phần của IoT. Xem xét một số 
-nền tảng IoT thương mại đang được triển khai, đề xuất và phân tích một kiến trúc End-to-End hoàn chỉnh.
+Chương 2: Thông tin chung về IoT, mô hình 3 lớp để hiểu về các khái niệm và mô tả chi tiết các thành phần của IoT. Xem xét một số nền tảng IoT thương mại đang được triển khai, đề xuất và phân tích một kiến trúc End-to-End hoàn chỉnh.
 
 Chương 3: Mô tả việc thực hiện các thử nghiệm được triển khai trong bài viết.
 
@@ -69,9 +52,7 @@ Chương 2
 ========
 Nghiên cứu IoT
 --------------
-Phần này trình bày tổng quan về IoT và mô tả các thành phần của nó dựa trên mô hình 3 lớp. Một số công cụ thương mại cũng được nhắc 
-đến,  một vài nền tảng điện toán đám mây IoT, những Cloud ảo hóa lưu trữ dữ liệu từ hàng ngàn thiết bị. Sau khi phân tích các thành 
-phần tạo nên IoT, chúng ta sẽ kết hợp chúng lại tạo ra một kiến trúc mô phỏng môi trường IoT.
+Phần này trình bày tổng quan về IoT và mô tả các thành phần của nó dựa trên mô hình 3 lớp. Một số công cụ thương mại cũng được nhắc đến,  một vài nền tảng điện toán đám mây IoT, những Cloud ảo hóa lưu trữ dữ liệu từ hàng ngàn thiết bị. Sau khi phân tích các thành phần tạo nên IoT, chúng ta sẽ kết hợp chúng lại tạo ra một kiến trúc mô phỏng môi trường IoT.
 
 2.1 Mô hình IoT 3 lớp
 ---------------------
@@ -91,31 +72,23 @@ nay không có kiến trúc làm tiêu chuẩn và vụ thể cho các IoT. Mặ
 
 2.1.1 Lớp nhận thức
 -------------------
-Nhiệm vụ chính của lớp này là cảm nhận các đối tượng vật lí như nhiệt độ, vị trí, tốc độ, vv, bằng các thiết bị cảm biến khác nhau 
-và chuyển đổi thông tin này thành các tín hiệu kĩ thuật số mà có thể dễ dàng truyền qua mạng và lưu trữ. Các đối tượng của lớp này 
-có thể là sensor và hoặc actuator. Actuator là các thiết bị mà có thể nhận các lệnh lập trình và thực hiện các nhiệm vụ trong những
+Nhiệm vụ chính của lớp này là cảm nhận các đối tượng vật lí như nhiệt độ, vị trí, tốc độ, vv, bằng các thiết bị cảm biến khác nhau và chuyển đổi thông tin này thành các tín hiệu kĩ thuật số mà có thể dễ dàng truyền qua mạng và lưu trữ. Các đối tượng của lớp này có thể là sensor và hoặc actuator. Actuator là các thiết bị mà có thể nhận các lệnh lập trình và thực hiện các nhiệm vụ trong những
 thời điểm cụ thể.
 
 2.1.2 Lớp mạng
 --------------
-Lớp mạng có trách nhiệm truyền tải dữ liệu nhận được từ lớp Nhận thức đến cơ sở dữ liệu, Server hoặc trung tâm xử lí dữ liệu. Các 
-công nghệ được sử dụng để nhận dạng lớp này gồm công nghệ di động 2G/3G/LTE, Wi-Fi, Bluetooth hoặc Zigbee. Ngoài ra còn có nhiều 
-công nghệ truyền tin Radio, IPv6  ở lớp truyền tải cho phép khả năng kết nối hàng tỉ thiết bị được dự kiến sử dụng trong tương lai 
-gần.
+Lớp mạng có trách nhiệm truyền tải dữ liệu nhận được từ lớp Nhận thức đến cơ sở dữ liệu, Server hoặc trung tâm xử lí dữ liệu. Các công nghệ được sử dụng để nhận dạng lớp này gồm công nghệ di động 2G/3G/LTE, Wi-Fi, Bluetooth hoặc Zigbee. Ngoài ra còn có nhiều công nghệ truyền tin Radio, IPv6  ở lớp truyền tải cho phép khả năng kết nối hàng tỉ thiết bị được dự kiến sử dụng trong tương lai gần.
 IoT sẽ là một mạng lưới rộng lớn, không chỉ kết nối hàng tỉ thứ, mà còn bao gồm các mạng không đồng nhất.
 
 2.1.3 Lớp ứng dụng
 ------------------
-Lớp Ứng dụng lưu trữ, xử lí và phân tích các thông tin nhận được từ các lớp mạng. Tạo những điều kiện thuận lợi cho những ứng dụng
-của người dùng cuối như tự động hóa, dịch vụ định vị, nhận dạng, an ninh… Lớp này cung cấp các ứng dụng cho tất cả các loại thử 
-thách công nghệ. Các ứng dụng này thúc đẩy Internet of Things, đó là lí do tại sao lớp này đóng một vai trò quan trọng trong sự lan
-truyền của IoT.
+Lớp Ứng dụng lưu trữ, xử lí và phân tích các thông tin nhận được từ các lớp mạng. Tạo những điều kiện thuận lợi cho những ứng dụng của người dùng cuối như tự động hóa, dịch vụ định vị, nhận dạng, an ninh… Lớp này cung cấp các ứng dụng cho tất cả các loại thử thách công nghệ. Các ứng dụng này thúc đẩy Internet of Things, đó là lí do tại sao lớp này đóng một vai trò quan trọng trong sự lan truyền của IoT.
 
 2.2 Các thành phần của Internet of Things
 -----------------------------------------
 Các thành phần cần thiết để xây dựng một nền tảng thử nghiệm IoT được phân loại dưới đây dựa trên mô hình 3 lớp.
 
-	+ Lớp nhận thức bao gồm:
+- Lớp nhận thức bao gồm:
 
 Sensor, cảm nhận các tính chất vật lí và chuyển đổi chúng thành các tín hiệu kĩ thuật số.
 
@@ -124,7 +97,7 @@ Actuator, nhận lệnh để thực hiện các hành động vào những th�
 End-devices, là những bảng mạch tích hợp vi điều khiển nhỏ có khả năng xử lí các thông tin liên lạc giữa các Sensor và Actuator.
 
 
-	+ Lớp mạng bao gồm:
+- Lớp mạng bao gồm:
 
 Communication protocols, Giao thức truyền thông sử dụng cho các End-devices.
 
@@ -134,30 +107,23 @@ Gateway, cổng nối tiếp từ các End-device với mạng Internet.
 
 Operating Systems, Hệ điều hành cho các End-device.
 
-Message Queues, hàng đợi tin nhắn là thư viện trong các máy chủ và các ứng dụng để cung cấp một hệ thống tin nhắn đáp ứng quá trình 
-publish bản tin.
+Message Queues, hàng đợi tin nhắn là thư viện trong các máy chủ và các ứng dụng để cung cấp một hệ thống tin nhắn đáp ứng quá trình publish bản tin.
 
 Application layer protocol, giao thức lớp ứng dụng để kết nối các ứng dụng đến End-device.
 
 
-	+ Lớp ứng dụng bao gồm:
+- Lớp ứng dụng bao gồm:
 
-IoT Cloud Platform, nền tảng đám mây ảo lưu trữ thông tin từ End-device và cung cấp giao diện với sự thể hiện dữ liệu như bảng biểu, 
-đồ thị cho các End-user.
+IoT Cloud Platform, nền tảng đám mây ảo lưu trữ thông tin từ End-device và cung cấp giao diện với sự thể hiện dữ liệu như bảng biểu, đồ thị cho các End-user.
 
-Software Application, các ứng dụng phần mềm cho điện thoại thông minh, máy tính bảng, máy tính để bàn cung cấp các đồ họa giao diện 
-người dùng (GUI) để theo dõi, xử lí và điều khiển các thông số End-device.
+Software Application, các ứng dụng phần mềm cho điện thoại thông minh, máy tính bảng, máy tính để bàn cung cấp các đồ họa giao diện người dùng (GUI) để theo dõi, xử lí và điều khiển các thông số End-device.
 
-Cần chú ý, IoT Cloud Platform làm việc như các nút cho các ứng dụng kết nối và truy xuất dữ liệu, đó là các chức năng thuốc về Lớp 
-mạng. Tuy nhiên mục tiêu chính của IoT Cloud Platform là lưu trữ và hiển thị dữ liệu cho End-user, đó là lí do tại sao chúng thuộc
-về lớp Úng dụng. Tương tự, các M2M server cũng có thể cung cấp một ứng dụng giao diện để thể hiện dữ liệu, tuy nhiên, đó không phải 
-là mục đích của chúng, do đó chúng thuộc lớp mạng.
+Cần chú ý, IoT Cloud Platform làm việc như các nút cho các ứng dụng kết nối và truy xuất dữ liệu, đó là các chức năng thuốc về Lớp mạng. Tuy nhiên mục tiêu chính của IoT Cloud Platform là lưu trữ và hiển thị dữ liệu cho End-user, đó là lí do tại sao chúng thuộc
+về lớp Úng dụng. Tương tự, các M2M server cũng có thể cung cấp một ứng dụng giao diện để thể hiện dữ liệu, tuy nhiên, đó không phải là mục đích của chúng, do đó chúng thuộc lớp mạng.
 
 2.2.1 Các End-device
 --------------------
-Gần đây, có nhiều tiến bộ trong các hệ thống vi cơ điện, truyền tin không dây, thiết bị điện tử kĩ thuật số với chi phí thấp, công 
-suất nhỏ, đa chức năng và có khả năng giao tiếp trong khoảng cách ngắn. Những thiết bị đầu cuối được trang bị cảm biến và/hoặc cơ 
-cấu chấp hành, vi điều khiển và một bộ truyền tin radio được mô tả như sau:
+Gần đây, có nhiều tiến bộ trong các hệ thống vi cơ điện, truyền tin không dây, thiết bị điện tử kĩ thuật số với chi phí thấp, công suất nhỏ, đa chức năng và có khả năng giao tiếp trong khoảng cách ngắn. Những thiết bị đầu cuối được trang bị cảm biến và/hoặc cơ cấu chấp hành, vi điều khiển và một bộ truyền tin radio được mô tả như sau:
 
 1. Sensor, cảm biến đo lường với độ chính xác cao.
 
@@ -169,56 +135,43 @@ cấu chấp hành, vi điều khiển và một bộ truyền tin radio đượ
 truyền thông phù hợp, và một số giải pháp thay thế phù hợp nhất được tóm tắt trong phần trình bày tiếp theo.
 ```
 
-                  Sensors
-                 +------+
-		 |      |
-Power supply     |  µC  |.o)RF Transceiver
-	         +------+
-                 Actuators
+				Sensors
+                +------+
+				|      |
+Power supply |  µC  |.o)RF Transceiver
+				+------+
+                Actuators
 ```
 2.2.2 Các giao thưc truyền thông cho IoT
 ----------------------------------------
-Các thiết bị đầu cuối có thể được trang bị khả năng kết nối Internet, hoạt động ở công suất thấp và khả năng giao tiếp hạn chế. 
-Chúng dựa vào một Gateway để mở cửa dữ liệu của chúng với Internet. Các giao thức sau đây thường được sử dụng để kết nối giữa thiết 
-bị đầu cuối và các Gateway.
+Các thiết bị đầu cuối có thể được trang bị khả năng kết nối Internet, hoạt động ở công suất thấp và khả năng giao tiếp hạn chế. Chúng dựa vào một Gateway để mở cửa dữ liệu của chúng với Internet. Các giao thức sau đây thường được sử dụng để kết nối giữa thiết bị đầu cuối và các Gateway.
 
-Kết nối dây:
+- Kết nối dây:
 M-bus
 Modbus
 
-Kết nối không dây:
+- Kết nối không dây:
 Zigbee
 6LoWLAN
 Wi-Fi
+LoRa
 SWAP
 
-Mạng không dây của các thiết bị đầu cuối không cần truyền dữ liệu tốc độ cao do không cần truyền các giá trị liên tục và dành nhiều 
-thời gian nhất ở chế độ ngủ vì những lí do tiêu thụ điện năng. Ngoài ra, cần xem xét vấn đề các cảm biến được triển khai ở những 
-khu vực rộng lớn, khoảng cách là rất quan trọng. Sau nhiều tính toán, tần số thấp và đặc biệt là truyền thông dưới tần số GHz sẽ 
-phù hợp hơn cho mạng không dây của các thiết bị đầu cuối do thực tế chúng cần ít năng lượng và truyền ở khoảng cách xa hơn so với 
-tần số cao. Tốc độ truyền dữ liệu thấp cỡ 600 KB/s là điểm bất lợi chính của tần số dưới GHz nhưng được xem là đủ cho mạng các 
-cảm biến.
+Mạng không dây của các thiết bị đầu cuối không cần truyền dữ liệu tốc độ cao do không cần truyền các giá trị liên tục và dành nhiều thời gian nhất ở chế độ ngủ vì những lí do tiêu thụ điện năng. Ngoài ra, cần xem xét vấn đề các cảm biến được triển khai ở những khu vực rộng lớn, khoảng cách là rất quan trọng. Sau nhiều tính toán, tần số thấp và đặc biệt là truyền thông dưới tần số GHz sẽ phù hợp hơn cho mạng không dây của các thiết bị đầu cuối do thực tế chúng cần ít năng lượng và truyền ở khoảng cách xa hơn so với tần số cao. Tốc độ truyền dữ liệu thấp cỡ 600 KB/s là điểm bất lợi chính của tần số dưới GHz nhưng được xem là đủ cho mạng các cảm biến.
 
 2.2.2.1 Zigbee
 --------------
-Liên minh Zigbee định nghĩa một đặc điểm kĩ thuật được sử dụng để tạo ra mạng không dây khoảng cách gần và năng lượng thấp trong 
-dải tần 868/915MHz và 2.4GHz. Nó dựa trên các tiêu chuẩn IEEE 802.15.4, trong đó định nghĩa các lớp PHY và MAC. Thiết bị Zigbee
-có thể truyền dữ liệu qua những khoảng cách xa bằng cách triển khai mạng đa điểm. Tiêu chuẩn này định nghĩa tốc độ truyền tối đa 
-250Kbit/s ở tần số 2.4GHz, rất thích hợp cho truyền dữ liệu định kì hoặc liên tục từ cảm biến hoặc đến các thiết bị. Nó được sử 
-dụng trong các ứng dụng yêu cầu tốc độ dữ liệu thấp và tuối thọ pin dài. Zigbee bao gồm các lớp vật lí và lớp điều khiển truy cập 
-MAC được định nghĩa bởi chuẩn IEEE 802.15.4 và nó định nghĩa riêng tập các quy tắc cho lớp mạng và lớp ứng dụng. Nó được tạo ra cho
-các mục đích tự động hóa không dây và ứng dụng điều khiển từ xa.
+Liên minh Zigbee định nghĩa một đặc điểm kĩ thuật được sử dụng để tạo ra mạng không dây khoảng cách gần và năng lượng thấp trong dải tần 868/915MHz và 2.4GHz. Nó dựa trên các tiêu chuẩn IEEE 802.15.4, trong đó định nghĩa các lớp PHY và MAC. Thiết bị Zigbee có thể truyền dữ liệu qua những khoảng cách xa bằng cách triển khai mạng đa điểm. Tiêu chuẩn này định nghĩa tốc độ truyền tối đa 250Kbit/s ở tần số 2.4GHz, rất thích hợp cho truyền dữ liệu định kì hoặc liên tục từ cảm biến hoặc đến các thiết bị. Nó được sử dụng trong các ứng dụng yêu cầu tốc độ dữ liệu thấp và tuối thọ pin dài. Zigbee bao gồm các lớp vật lí và lớp điều khiển truy cập MAC được định nghĩa bởi chuẩn IEEE 802.15.4 và nó định nghĩa riêng tập các quy tắc cho lớp mạng và lớp ứng dụng. Nó được tạo ra cho các mục đích tự động hóa không dây và ứng dụng điều khiển từ xa.
 
-Một số tính năng của nó:
+- Một số tính năng của nó:
 
 	Tránh xung đột
 	Quản lí khe thời gian
 	Tích hợp bảo mật truyền tin
 
-Phạm vi truyền của Zigbee lên tới 70m trong nhà và 400m ngoài 	trời. Các mạng được bảo mật bằng việc sử dụng mã hóa AES 128, các 
-key và xác thực thiết bị.
+Phạm vi truyền của Zigbee lên tới 70m trong nhà và 400m ngoài trời. Các mạng được bảo mật bằng việc sử dụng mã hóa AES 128, các key và xác thực thiết bị.
 
-Tiêu chuẩn Zigbee thường được triển khai ở:
+- Tiêu chuẩn Zigbee thường được triển khai ở:
 
 	Tự động hóa tòa nhà
 	Điều khiển từ xa
@@ -231,81 +184,52 @@ Tiêu chuẩn Zigbee thường được triển khai ở:
 	Dịch vụ bán lẻ
 	Dịch vụ viễn thông
 
-Thiết bị Zigbee được chia làm 3 loại:
+- Thiết bị Zigbee được chia làm 3 loại:
 
-1. Zigbee Coordiantor (ZC): Điều phối viên, thiết bị có quyền lực nhất trong mạng, nó tạo thư mục gốc của cây mạng và có thể kết 
-nối với mạng khác.
+1. Zigbee Coordiantor (ZC): Điều phối viên, thiết bị có quyền lực nhất trong mạng, nó tạo thư mục gốc của cây mạng và có thể kết nối với mạng khác.
 
-2. Zigbee Router (ZR): Cùng với việc chạy một chức năng ứng dụng, một Router có thể hoạt động như một bộ đinh tuyến trung gian,
-truyền dữ liệu từ các thiết bị khác.
+2. Zigbee Router (ZR): Cùng với việc chạy một chức năng ứng dụng, một Router có thể hoạt động như một bộ đinh tuyến trung gian, truyền dữ liệu từ các thiết bị khác.
 
-3. Zigbee End-Device (ZED): Có đầy đủ chức năng để nói chuyện với các nút cha (hoặc là ZC hoặc là ZR). Nó không thể chuyển tiếp dữ 
-liệu từ các thiết bị khác. Mối quan hệ này cho phép các nút ngủ toàn bộ thời gian khi nó không cần gửi dữ liệu đi, điều này giúp kéo dài tuổi thọ pin. Một ZED đòi hỏi bộ nhớ it nhất do đó có thể có chi phí sản suất thấp hơn ZR hay ZC.
+3. Zigbee End-Device (ZED): Có đầy đủ chức năng để nói chuyện với các nút cha (hoặc là ZC hoặc là ZR). Nó không thể chuyển tiếp dữ liệu từ các thiết bị khác. Mối quan hệ này cho phép các nút ngủ toàn bộ thời gian khi nó không cần gửi dữ liệu đi, điều này giúp kéo dài tuổi thọ pin. Một ZED đòi hỏi bộ nhớ it nhất do đó có thể có chi phí sản suất thấp hơn ZR hay ZC.
 
 2.2.2.2 6LoWPAN
 ---------------
-6LoWPAN là một giao thức truyền thông khác bao gồm các lớp PHY và MAC được định nghĩa bởi chuẩn IEEE 802.15.4 và hoạt động ở dải 
-tần 868/915MHz và 2.4GHz như Zigbee. Nó là từ viết tắt của IPv6 trên nền mạng cá nhân không dây năng lượng thấp (Low Power Wireless 
-Personal Area Networks). 6LoWLAN có thêm một lớp thích ứng làm việc theo IEEE 802.15.4 cho phép truyền thôgn IPv6. Nó được định nghĩa cơ chế đóng gói và nén các header cho phép các gói tin IPv6 gửi nhận qua mạng dựa trên chuẩn IEEE 802.15.4. Các đặc điểm kĩ thuật cơ sở được phát triển bởi nhóm 6LoWPAN IETF ( Internet Engineering Task Force) được gọi là RFC 6268.
+6LoWPAN là một giao thức truyền thông khác bao gồm các lớp PHY và MAC được định nghĩa bởi chuẩn IEEE 802.15.4 và hoạt động ở dải tần 868/915MHz và 2.4GHz như Zigbee. Nó là từ viết tắt của IPv6 trên nền mạng cá nhân không dây năng lượng thấp (Low Power Wireless Personal Area Networks). 6LoWLAN có thêm một lớp thích ứng làm việc theo IEEE 802.15.4 cho phép truyền thôgn IPv6. Nó được định nghĩa cơ chế đóng gói và nén các header cho phép các gói tin IPv6 gửi nhận qua mạng dựa trên chuẩn IEEE 802.15.4. Các đặc điểm kĩ thuật cơ sở được phát triển bởi nhóm 6LoWPAN IETF ( Internet Engineering Task Force) được gọi là RFC 6268.
 
-Khái niệm 6LoWPAN bắt nguồn từ ý tưởng rằng các giao thức Internet nên được áp dụng cho cả các thiết bị nhỏ nhất. và rằng các thiết 
-bị sử dụng điện năng thấp với khả năng xử lí hạn chế có thể tham gia vào mạng IoT. Mục tiêu của mạng IP cho truyền thông radio năng
-lượng thấp là các ứng dụng cần kết nối Internet không dây tốc độ thấp. Ví dụ tích hợp tự động hóa và ứng dụng giải trí trong nhà, văn phòng và môi trường nhà máy. IPv6 cũng được sử dụng trên lưới điện thông minh, cho phép đo đạc thông minh và liên kết với các thiết bị khác trước khi gửi dữ liệu đến hệ thống thanh toán sử dụng IPv6.
+Khái niệm 6LoWPAN bắt nguồn từ ý tưởng rằng các giao thức Internet nên được áp dụng cho cả các thiết bị nhỏ nhất. và rằng các thiết bị sử dụng điện năng thấp với khả năng xử lí hạn chế có thể tham gia vào mạng IoT. Mục tiêu của mạng IP cho truyền thông radio năng lượng thấp là các ứng dụng cần kết nối Internet không dây tốc độ thấp. Ví dụ tích hợp tự động hóa và ứng dụng giải trí trong nhà, văn phòng và môi trường nhà máy. IPv6 cũng được sử dụng trên lưới điện thông minh, cho phép đo đạc thông minh và liên kết với các thiết bị khác trước khi gửi dữ liệu đến hệ thống thanh toán sử dụng IPv6.
 
 2.2.2.3 Wi-Fi
 -------------
-Wi-Fi là một công nghệ truyền tin không dây cục bộ họat động ở tần số 2.4GHz và 5GHz. Nó được xây dựng dựa trên tiêu chuẩn IEEE
-802.11  mà định nghĩa các lớp PHY và MAC. Các thiết bị Wi-Fi thông dụng sử dụng chuẩn 802.11g có tốc độ tối rra 54MBit/s và các
-thiết bị sử dụng chuẩn 802.11n có tốc độ truyền dữ liệu lên đến 600Mbit/s. Rất nhiều thiết bị sử dụng Wi-Fi để kết nối tới mạng 
-như Internet thông qua Access Point. Tuy nhiên, Wi-Fi không phải là lí tưởng cho mạng các cảm biến do dải tần số cao mà nó hoạt 
-động.
+Wi-Fi là một công nghệ truyền tin không dây cục bộ họat động ở tần số 2.4GHz và 5GHz. Nó được xây dựng dựa trên tiêu chuẩn IEEE 802.11 mà định nghĩa các lớp PHY và MAC. Các thiết bị Wi-Fi thông dụng sử dụng chuẩn 802.11g có tốc độ tối rra 54MBit/s và các thiết bị sử dụng chuẩn 802.11n có tốc độ truyền dữ liệu lên đến 600Mbit/s. Rất nhiều thiết bị sử dụng Wi-Fi để kết nối tới mạng như Internet thông qua Access Point. Tuy nhiên, Wi-Fi không phải là lí tưởng cho mạng các cảm biến do dải tần số cao mà nó hoạt động.
 
 2.2.2.4 SWAP
 ------------
-SWAP là viết tắt của Simple Wireless Abstract Protocol. Là một lớp giao thức gọn nhẹ được thiết kế cho các mạng không dây M2M hạn
-chế. Đặc trưng của nó là kiểu dữ liệu agnostic làm đơn giản hóa rất nhiều việc thực hiện nó. SWAP cùng với máy chủ mã nguồn mở M2M 
-Lagarto sẽ được nói sâu hơn trong các phần sau.
+SWAP là viết tắt của Simple Wireless Abstract Protocol. Là một lớp giao thức gọn nhẹ được thiết kế cho các mạng không dây M2M hạn chế. Đặc trưng của nó là kiểu dữ liệu agnostic làm đơn giản hóa rất nhiều việc thực hiện nó. SWAP cùng với máy chủ mã nguồn mở M2M Lagarto sẽ được nói sâu hơn trong các phần sau.
 
 2.2.2.5 M-bus
 -------------
-M-bus hay Metet-bus là một tiêu chuẩn Châu Âu cho việc đọc dữ liệu từ xa của thiết bị đo nhiệt và nó cũng có thể sử dụng cho tất cả
-các thiết bị cảm biến và thiết bị chấp hành khác. Sau khi đươcj tiêu chuẩn hóa nó đã đạt được tầm quan trọng lớn đối với ngành công
-nghiệp năng lượng vì nó có thể đưuọc sử dụng để đo đạc thời gian thực và giá thành rẻ. Nó là một giao thức có dây rất hiệu quả vì
-chỉ sử dụng một dây cáp cho rất nhiều cảm biến với địa chỉ riêng. M-bus bao gôm flwóp PHY và lớp liên kết dữ liệu. Nó có thể được 
-sử dụng cho IoT trong mạng mà không yêu cầu truyền tin không dây.
+M-bus hay Metet-bus là một tiêu chuẩn Châu Âu cho việc đọc dữ liệu từ xa của thiết bị đo nhiệt và nó cũng có thể sử dụng cho tất cả các thiết bị cảm biến và thiết bị chấp hành khác. Sau khi đươcj tiêu chuẩn hóa nó đã đạt được tầm quan trọng lớn đối với ngành công nghiệp năng lượng vì nó có thể đưuọc sử dụng để đo đạc thời gian thực và giá thành rẻ. Nó là một giao thức có dây rất hiệu quả vì chỉ sử dụng một dây cáp cho rất nhiều cảm biến với địa chỉ riêng. M-bus bao gôm flwóp PHY và lớp liên kết dữ liệu. Nó có thể được sử dụng cho IoT trong mạng mà không yêu cầu truyền tin không dây.
 
 2.2.2.6 Modbus
 --------------
-Giao thức Modbus là một cấu trúc bản tin được Modicon phát triển năm 1979 cho mạng có dây. Nó được sử dụng để thiết lập giao tiếp
-master-slave/client-server giữa các thiết bị. Modbus được sử dụng trong nhiều ứng dụng để giám sát, điều khiển thiết bị và kết nối 
-chúng với các cảm biến khác. Một đặc tả Modbus TCP/IP được phát triển năm 1999. Nó có thể được triển khai với bất kì thiết bị nào 
-hõ trợ cổng kết nối TCP/IP. Modbus là một giao thức Internet, điều đó có nghĩa là một thiết bị có giao tiếp Modbus TCP/IP có thể
-được định địa chỉ ở bất cứ nơi nào. Modbus tích hợp các lớp PHY, Liên kết dữ liệu, Lớp Mạng, Lớp truyền thông và lớp Ứng dụng.
+Giao thức Modbus là một cấu trúc bản tin được Modicon phát triển năm 1979 cho mạng có dây. Nó được sử dụng để thiết lập giao tiếp master-slave/client-server giữa các thiết bị. Modbus được sử dụng trong nhiều ứng dụng để giám sát, điều khiển thiết bị và kết nối chúng với các cảm biến khác. Một đặc tả Modbus TCP/IP được phát triển năm 1999. Nó có thể được triển khai với bất kì thiết bị nào hõ trợ cổng kết nối TCP/IP. Modbus là một giao thức Internet, điều đó có nghĩa là một thiết bị có giao tiếp Modbus TCP/IP có thể được định địa chỉ ở bất cứ nơi nào. Modbus tích hợp các lớp PHY, Liên kết dữ liệu, Lớp Mạng, Lớp truyền thông và lớp Ứng dụng.
 Modbus là một giao thức có thể phù hợp với IoT để kết nối trong mạng có dây.
 
 2.2.3 Các hệ điều hành IoT
 --------------------------
-Phần này giới thiệu hai hệ điều hành được thiết kế đặc biệt cho IoT: Contiki và TinyOS. Cả hai đều là những công cụ phát triển bao
-gôm fnhiều thư viện và cung cấp IDE để viết hệ điều hành cho vi điều khiển cho các End-device. Contiki sử dụng ngôn ngữ lập trình C,
-TinyOS sử dụng nesC, một biến thể của C.
+Phần này giới thiệu hai hệ điều hành được thiết kế đặc biệt cho IoT: Contiki và TinyOS. Cả hai đều là những công cụ phát triển bao gồm nhiều thư viện và cung cấp IDE để viết hệ điều hành cho vi điều khiển cho các End-device. Contiki sử dụng ngôn ngữ lập trình C, TinyOS sử dụng nesC, một biến thể của C.
 
 2.2.3.1 Contiki
 ---------------
-Contiki là một nền tảng phát triển cho việc upload hệ điều hành vào các vi điều khiển. Nó gồm có Instant Contiki và Cooja. Instant 
-Contiki là một hệ điều hành mã nguồn mở dựa trên Ubuntu, nó chạy trên máy ảo và được dùng để viết OS cho vi điều khiển bằng ngôn
-ngữ C. Cooja là một ứng dụng của Instant Contiki để mô phỏng End-device cho trình giả lập. Contiki được thiết kế cho các hệ thống
-có bộ nhớ, khả năng xử lí và băng thông hạn chế và đặc biệt chú trọng đến kết nối không dây low-power. Nó được tạo ra bởi Adam 
-Dunkels vào năm 2002 và tiếp tục được phát triển bởi cộng đồng trên toàn thế giới đến từ Atmel, Cisco, Redwire, Oxford University
-và nhất nhiều người khác. Một hệ thống Contiki điển hình chỉ yêu cầu khoảng 10 kbs RAM và 30 kbs ROM.
+Contiki là một nền tảng phát triển cho việc upload hệ điều hành vào các vi điều khiển. Nó gồm có Instant Contiki và Cooja. Instant Contiki là một hệ điều hành mã nguồn mở dựa trên Ubuntu, nó chạy trên máy ảo và được dùng để viết OS cho vi điều khiển bằng ngôn ngữ C. Cooja là một ứng dụng của Instant Contiki để mô phỏng End-device cho trình giả lập. Contiki được thiết kế cho các hệ thống có bộ nhớ, khả năng xử lí và băng thông hạn chế và đặc biệt chú trọng đến kết nối không dây low-power. Nó được tạo ra bởi Adam Dunkels vào năm 2002 và tiếp tục được phát triển bởi cộng đồng trên toàn thế giới đến từ Atmel, Cisco, Redwire, Oxford University và nhất nhiều người khác. Một hệ thống Contiki điển hình chỉ yêu cầu khoảng 10 kbs RAM và 30 kbs ROM.
 Contiki cũng cấp 3 stack giao thức mạng:
 
 1. Stack uIP TCP/IP IPv4
 2. Stack uIPv6
-3. Rime Stack 
+3. Rime Stack
 
 Stack IPv6 được đóng góp bởi Cisco và kèm theo header 6LoWPAN phù hợp với tiêu chuẩn IEEE 802.15.4.
-Nhiều hệ thống Contiki có khả năng tiết kiệm năng lượng tuyệt vời. Thời lượng pin cung cấp cho cảm biến không dây có thể lên đến 
-hàng năm. Cơ chế mặc định của Contiki để đạt được mức tiêu thụ năng lượng thấp được gọi là ContikiMAC. Nó cho phép thiết bị chạy ở
+Nhiều hệ thống Contiki có khả năng tiết kiệm năng lượng tuyệt vời. Thời lượng pin cung cấp cho cảm biến không dây có thể lên đến hàng năm. Cơ chế mặc định của Contiki để đạt được mức tiêu thụ năng lượng thấp được gọi là ContikiMAC. Nó cho phép thiết bị chạy ở
 chế độ low-power mà vẫn có thể nhận và lặp lại bản tin.
 Contiki nay đã hỗ trợ chạy trên nhiều device như:
 
@@ -320,8 +244,7 @@ http://www.contiki-os.org/hardware.html
 
 2.2.3.2 TinyOS
 --------------
-TinyOS là một môi trường phát triển mã nguồn mở dành cho lập trình nhúng. Nó dùng nesC để tạo ra hệ điều hành hỗ trợ chạy trên nhiều
-vi điều khiển khác nhau. Nó có thể hoạt động mà chỉ yêu cầu một vài kb RAM và vài chục kb ROM.
+TinyOS là một môi trường phát triển mã nguồn mở dành cho lập trình nhúng. Nó dùng nesC để tạo ra hệ điều hành hỗ trợ chạy trên nhiều vi điều khiển khác nhau. Nó có thể hoạt động mà chỉ yêu cầu một vài kb RAM và vài chục kb ROM.
 TinyOS hỗ trợ:
 
 1. Đầy đủ stack 6LoWPAN/RPL IPv6
@@ -333,21 +256,12 @@ TinyOS hỗ trợ:
 
 2.2.4 Gateway cho mạng cục bộ M2M
 ---------------------------------
-Gateway là thiết bị thu thập các kết quả đo từ thiết bị cuối và gửi các lệnh điều khiển đến các thiết bị chấp hành. Gateway có 
-trách nhiệm kết nối các mạng cục bộ M2M đến các mạng máy tính khác. Trong trường hợp của Internet đó là Ethernet, Wi-Fi hoặc các
-mạng di động. Thiết bị cuối thường là các thiết bị nhỏ với nhiều hạn chế về khả năng truyền thông không thể xuất được các gói UDP.
-Điều này có nghĩa là các Gateway phải duy trì một server để dịch các thông điệp thành các gói tin định tuyến. Server liên tục giám
-sát mạng. Nó upload thông tin từ thiết bị cuối đến các đám mây ảo và có trách nhiệm nhận lệnh từ Internet và dịch chúng sang ngôn
-ngữ mà các thiết bị chấp hành có thể hiểu được. Server này gọi là server M2M và là chìa khóa của hệ thống vì nó điều phối sự kết 
-nối của mạng các thiết bị cuối.
+Gateway là thiết bị thu thập các kết quả đo từ thiết bị cuối và gửi các lệnh điều khiển đến các thiết bị chấp hành. Gateway có trách nhiệm kết nối các mạng cục bộ M2M đến các mạng máy tính khác. Trong trường hợp của Internet đó là Ethernet, Wi-Fi hoặc các mạng di động. Thiết bị cuối thường là các thiết bị nhỏ với nhiều hạn chế về khả năng truyền thông không thể xuất được các gói UDP.
+Điều này có nghĩa là các Gateway phải duy trì một server để dịch các thông điệp thành các gói tin định tuyến. Server liên tục giám sát mạng. Nó upload thông tin từ thiết bị cuối đến các đám mây ảo và có trách nhiệm nhận lệnh từ Internet và dịch chúng sang ngôn ngữ mà các thiết bị chấp hành có thể hiểu được. Server này gọi là server M2M và là chìa khóa của hệ thống vì nó điều phối sự kết nối của mạng các thiết bị cuối.
 
 2.2.5 Hàng đợi bản tin (Message Queues)
 ---------------------------------------
-Hàng đợi bản tin là những thư viện có thể thực hiện trong mã nguồn mở của máy chủ để cung cấp một hệ thống bản tin cho dữ liệu của 
-các thiết bị cuối. Chúng được sử dụng khi các server M2M khác nhau cần giao tiếp và trao đổi thông tin. Hàng đợi bản tin cung cấp
-cho các server khả năng đối phó với tình trạng tắc nghẽn, khả năng tương thích giữa các hệ thống, độ trễ và lặp thông điệp. Chúng có
-thể cung cấp hệ thống bản tin cho các server trên cùng một máy tính, trên các máy tính khác nhau trong mạng LAN hoặc Internet. Có
-nhiều hành đợi bản tin thương mại như:
+Hàng đợi bản tin là những thư viện có thể thực hiện trong mã nguồn mở của máy chủ để cung cấp một hệ thống bản tin cho dữ liệu của các thiết bị cuối. Chúng được sử dụng khi các server M2M khác nhau cần giao tiếp và trao đổi thông tin. Hàng đợi bản tin cung cấp cho các server khả năng đối phó với tình trạng tắc nghẽn, khả năng tương thích giữa các hệ thống, độ trễ và lặp thông điệp. Chúng có thể cung cấp hệ thống bản tin cho các server trên cùng một máy tính, trên các máy tính khác nhau trong mạng LAN hoặc Internet. Có nhiều hành đợi bản tin thương mại như:
 
 MQTT
 ZeroMQ
@@ -355,9 +269,7 @@ RabbitMQ
 IronMQ
 ActiveMQ
 
-Trong số đó, nổi bật lên là MQTT và ZeroMQ. ZeroMQ không phải là một hàng đợi bản tin, nhưng là một thư viện để xây dựng hàng đợi
-bản tin có khả năng lập trình làm cho nó linh hoạt hơn các hàng đợi bản tin khác. MQTT, còn được sử dụng bởi Facebook Messanger, 
-thích hợp cho các thiết bị cuối vì sử dụng ít băng thông và tiết kiệm năng lượng.
+Trong số đó, nổi bật lên là MQTT và ZeroMQ. ZeroMQ không phải là một hàng đợi bản tin, nhưng là một thư viện để xây dựng hàng đợi bản tin có khả năng lập trình làm cho nó linh hoạt hơn các hàng đợi bản tin khác. MQTT, còn được sử dụng bởi Facebook Messanger, thích hợp cho các thiết bị cuối vì sử dụng ít băng thông và tiết kiệm năng lượng.
 
 2.2.5.1 ZeroMQ
 --------------
