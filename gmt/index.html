@@ -25,19 +25,15 @@ $('#gform').on('submit', function(e) {
       action ="https://docs.google.com/forms/d/1WeaA0glDR-NtOS4aFtY89xuwNqtxTAiCnNgQi3jqPY4/formResponse?" 
       target = "hidden_iframe"
       onsubmit="submitted=true;">
-      Log:<br><!--
+      Log:<br>
         <input
 
-               type="text" 
+               type="textarea" 
+               row="5"
                name = "entry.921668475"
                id="entry.921668475"><br>
-        <textarea id="data" form ="gform" rows="10" cols="80">Enter log here...</textarea> -->
 
-        <input
-              TYPE="hidden"
-              NAME= "redirect"
-              VALUE="http://www.yoursite.com/thankyou.html">
-                <br>
+       
         <input 
                type="submit"
                value="Send"
@@ -45,8 +41,7 @@ $('#gform').on('submit', function(e) {
 
 
 </form>
-        <textarea id="data" form ="gform" rows="10" cols="80">Enter log here...</textarea>
-
+  
         <iframe 
                 name="hidden_iframe"
                 id="hidden_iframe"
