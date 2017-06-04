@@ -8,6 +8,11 @@ $('#gform').on('submit', function(e) {
   $('#gform *').fadeOut(2000);
   $('#gform').prepend('Your submission has been processed...');
   });
+        function foo()
+{
+   alert("Submit button clicked!");
+   return true;
+}
 </script>
  </head>
 <body>
@@ -43,11 +48,7 @@ $('#gform').on('submit', function(e) {
                 style="display:none;"
                 onload= "if(submitted) {}">
         </iframe>
-function foo()
-{
-   alert("Submit button clicked!");
-   return true;
-}
+
 
 </body>
 </html>
