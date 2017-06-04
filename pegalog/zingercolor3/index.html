@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+        <head>
+ 
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#gform').prepend('Your submission has been processed...');
+  });
+        function ook()
+{
+   alert("Your log has been processed...");
+   return true;
+}
+</script>
+ </head>
+<body>
+
+<h2>Zinger Clolor 3</h2>
+
+<form name="gform"
+      id ="gform"
+      enctype="text/plain"
+      action ="https://docs.google.com/forms/d/1WeaA0glDR-NtOS4aFtY89xuwNqtxTAiCnNgQi3jqPY4/formResponse?" 
+      target = "hidden_iframe"
+      onsubmit="submitted=true;">
+      Log:<br> <!--
+        <input
+               type="text"
+               name = "entry.921668475"
+               id="entry.921668475"><br> -->
+
+       <textarea name="entry.921668475"
+               id="entry.921668475"
+               cols="30" rows="10"></textarea>
+        <br>
+        <input 
+               type="submit"
+               value="Send"
+               onclick = "return ook();">
+
+
+</form>
+  
+        <iframe 
+                name="hidden_iframe"
+                id="hidden_iframe"
+                style="display:none;"
+                onload= "if(submitted) {}">
+        </iframe>
+
+
+</body>
+</html>
