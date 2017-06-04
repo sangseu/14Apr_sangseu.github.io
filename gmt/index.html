@@ -33,7 +33,7 @@ $('#gform').on('submit', function(e) {
         <input 
                type="submit"
                value="Send"
-               onclick = "google.com">
+               onclick = "return foo();">
 
 
 </form>
@@ -43,7 +43,11 @@ $('#gform').on('submit', function(e) {
                 style="display:none;"
                 onload= "if(submitted) {}">
         </iframe>
-
+function foo()
+{
+   alert("Submit button clicked!");
+   return true;
+}
 
 </body>
 </html>
